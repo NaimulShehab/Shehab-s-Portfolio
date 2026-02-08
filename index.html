@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shehab's Portfolio</title>
+    <style>
+        @font-face {
+            font-family: 'Clear Sans';
+            src: url('fonts/ClearSans-Regular.woff2') format('woff2'),
+                url('fonts/ClearSans-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Clear Sans';
+            src: url('fonts/ClearSans-Bold.woff2') format('woff2'),
+                url('fonts/ClearSans-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Clear Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 60px;
+        }
+
+        /* first Section */
+        .logo_navigation {
+            display: flex;
+            background-color: rgb(236, 236, 236);
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            width: 70%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 40px;
+            font-size: 18px;
+        }
+
+        .navigation ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: rgb(1, 1, 1);
+            font-weight: 500;
+        }
+
+        .navigation a:hover {
+            color: rgb(87, 87, 87);
+        }
+
+        /* Second Section */
+        .firstImg_firstText {
+            display: flex;
+            height: calc(100vh - 60px);
+            background-color: #fafafa;
+        }
+
+        .firstImg {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .firstImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .firstText {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .myName {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            white-space: nowrap;
+        }
+
+        .shortIntroText {
+            font-size: 28px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .reachBtn {
+            display: inline-block;
+            padding: 15px 60px;
+            background-color: #333;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-bottom: 5%;
+        }
+
+        .reachBtn:hover {
+            background-color: #555;
+        }
+
+        .resume a {
+    display: inline-block;
+    padding: 15px 60px;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.resume a:hover {
+    background-color: #555;
+}
+
+        /* About me section */
+        .aboutMe {
+            background-color: rgb(180, 176, 171);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 10%;
+            gap: 80px;
+        }
+
+        .aboutMeText {
+            width: 50%;
+        }
+
+        .aboutMeText h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .aboutMeText p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .secondImg {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .secondImg img {
+            width: 80%;
+            max-width: 450px;
+            height: auto;
+        }
+
+        /* Education Section */
+        .education {
+            background-color: #fafafa;
+            padding: 120px 10%;
+            display: flex;
+            gap: 80px;
+        }
+
+        .educationText {
+            width: 30%;
+            font-size: 48px;
+            font-weight: bold;
+            padding-top: 10%;
+        }
+
+        .eduDescription {
+            width: 70%;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            row-gap: 70px;
+            column-gap: 40px;
+            align-items: start;
+        }
+
+        .year {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .university {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .grade {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* Skills Section */
+        .skills_Proficiencies {
+            background-color: #fafafa;
+            padding: 120px 10%;
+            display: flex;
+            gap: 100px;
+            flex-direction: column;
+        }
+
+        .titleText {
+            width: 30%;
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .skillsDescription {
+            width: 70%;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 80px;
+        }
+
+        .tecnicalSkills,
+        .Languages {
+            width: 45%;
+        }
+
+        .SkillsDetails,
+        .langaugesDetails {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .meter {
+            width: 100%;
+            height: 12px;
+            background-color: #bdb9b5;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .meter::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 85%;
+            /* change this % to control skill level */
+            background-color: #000;
+        }
+
+        /* My Works Section */
+        .myWorks {
+            background-color: #343434;
+            color: #f6f6f6;
+            padding: 120px 10%;
+        }
+
+        .myWorkTitle {
+            font-weight: bold;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .workBox {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .workDetails {
+            width: 420px;
+            text-align: center;
+        }
+
+        .workImg {
+            width: 100%;
+            height: 260px;
+            /* same height for all images */
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .workImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* keeps ratio and fills box */
+            display: block;
+        }
+
+
+        .workdescription h3 {
+            margin-top: 25px;
+            font-size: 22px;
+        }
+
+        .workdescription p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .workdescription a img {
+            width: 24px;
+            /* fixed icon size */
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        .workdescription a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .workdescription a:hover {
+            color: #bbbbbb;
+        }
+
+        .workdescription a img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Contact Section */
+        .contactBox {
+            display: flex;
+            background-color: #000;
+            color: #fff;
+            padding: 120px 10%;
+            gap: 100px;
+            align-items: center;
+        }
+
+        /* Left Image */
+        .thirdImg {
+            width: 40%;
+        }
+
+        .thirdImg img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            display: block;
+        }
+
+        /* Right Content */
+        .contact {
+            width: 60%;
+        }
+
+        .contact h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .contact h5 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .contact p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .contact span {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        /* Social Icons */
+        .contact p img {
+            width: 28px;
+            margin-right: 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            filter: invert(1);
+            /* makes icon white */
+        }
+
+
+        .contact p img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo_navigation">
+        <div class="logo">
+            Shehab's Portfolio
+        </div>
+        <div class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#aboutMe">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills_Proficiencies">Skills & Proficiencies</a></li>
+                <li><a href="#myWorks">My Works</a></li>
+                <li><a href="#contactBox">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="firstImg_firstText" id="Home">
+        <div class="firstImg">
+            <img src="firstImg.jpg" alt="">
+        </div>
+        <div class="firstText">
+            <div class="myName">
+                Md. Naimul Islam Shehab
+            </div>
+            <div class="shortIntroText">
+                Undergraduate Student
+            </div>
+            <div class="reachOutBtn">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR2NjMS96MQnTkHxTKQj0TGG7y34s3VUv7lX4h7oSnsda65Q/viewform?usp=dialog" class="reachBtn">Reach Out</a>
+            </div>
+            <div class="resume">
+                <a href="https://drive.google.com/file/d/1TDqgJK9t8fvs_bUoPHQb0HBjzNcYF-W_/view?usp=sharing">Download Resume</a>
+            </div>
+        </div>
+    </div>
+    <div class="aboutMe" id="aboutMe">
+        <div class="aboutMeText">
+            <h1>About Me</h1>
+            <p>
+                Enthusiastic and dedicated undergraduate student currently in the 7th semester with a strong academic
+                background and foundational knowledge of software engineering concepts.<br> Actively learning
+                programming
+                and problem-solving skills, seeking a Software Engineering Internship to gain hands-on experience and
+                grow as a developer.
+            </p>
+        </div>
+        <div class="secondImg">
+            <img src="secondImg.jpg" alt="">
+        </div>
+    </div>
+    <div class="education" id="education">
+        <div class="educationText">
+            Education
+        </div>
+        <div class="eduDescription">
+            <div class="year">
+                2020 - 2021
+            </div>
+            <div class="details">
+                <div class="title">
+                    Bachelor’s Degree (Honour’s)
+                </div>
+                <div class="university">
+                    National University (Dhaka Commerce College)
+                </div>
+                <div class="grade">
+                    CGPA: 3.45 / 4.00 | 7th Semester (Ongoing)
+                </div>
+            </div>
+            <div class="year">
+                2019
+            </div>
+            <div class="details">
+                <div class="title">
+                    Higher Secondary Certificate (HSC)
+                </div>
+                <div class="university">
+                    Govt. Sayed Hatem Ali College, Barishal
+                </div>
+                <div class="grade">
+                    GPA: 4.25 / 5.00
+                </div>
+            </div>
+            <div class="year">
+                2017
+            </div>
+            <div class="details">
+                <div class="title">
+                    Secondary School Certificate (SSC)
+                </div>
+                <div class="university">
+                    Barishal Zilla School, Barishal
+                </div>
+                <div class="grade">
+                    GPA: 4.91 / 5.00
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skills_Proficiencies" id="skills_Proficiencies">
+        <div class="titleText">
+            Skills & <br>Proficiencies
+        </div>
+        <div class="skillsDescription">
+            <div class="tecnicalSkills">
+                <div class="SkillsDetails">
+                    HTML,CSS,PHP,JavaScript,Python,MySql
+                </div>
+                <div class="meter"></div>
+                <div class="SkillsDetails">
+                    Software and Web Development
+                </div>
+                <div class="meter"></div>
+            </div>
+            <div class="Languages">
+                <div class="langaugesDetails">
+                    Bangla(Native)
+                </div>
+                <div class="meter"></div>
+                <div class="langaugesDetails">
+                    English
+                </div>
+                <div class="meter"></div>
+            </div>
+        </div>
+    </div>
+    <div class="myWorks" id="myWorks">
+        <div class="myWorkTitle">
+            My Works
+        </div>
+        <div class="workBox">
+            <!-- first work -->
+            <div class="workDetails">
+                <div class="workImg">
+                    <img src="projectImg1.png" alt="">
+                </div>
+                <div class="workdescription">
+                    <h3>Attendance Management System</h3>
+                    <p>
+                        Web-based system developed using CSS and PHP for managing student attendance records. <br> <br>
+                        Visit My work at <a href="https://github.com/NaimulShehab/Attendance-Management-System"><img
+                                src="gitHubicon.png" alt=""><span>GitHub</span></a>
+                    </p>
+                </div>
+            </div>
+            <!-- 2nd work -->
+            <div class="workDetails">
+                <div class="workImg">
+                    <img src="projectImg2.png" alt="">
+                </div>
+                <div class="workdescription">
+                    <h3>To-Do List Application</h3>
+                    <p>
+                        Front-end task management application built using HTML, CSS, and JavaScript. <br> <br>
+                        Visit My work at <a href="https://github.com/NaimulShehab/to-do-list"><img src="gitHubicon.png"
+                                alt=""><span>GitHub</span></a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contactBox" id="contactBox">
+        <div class="thirdImg">
+            <img src="thirdImg.jpg" alt="">
+        </div>
+        <div class="contact">
+            <h3>Contact Me</h3>
+            <h5>Md. Naimul Islam Shehab</h5>
+            <p>
+                <span>Email:</span><br>
+                mdnaimulislamshehab35@gmail.com <br>
+                <span>Phone Number:</span><br>
+                01638386026 | 01581726339 <br><br>
+                <span>Social Media:</span><br>
+                <a href="https://www.linkedin.com/in/naimul-islam-shehab-4b6a80390/"><img src="linkdinIcon.png"
+                        alt=""></a>
+                <a href="https://www.facebook.com/naimul.islam.116149"><img src="facebookIcon.png" alt=""></a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
