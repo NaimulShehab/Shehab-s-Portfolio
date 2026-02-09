@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shehab's Portfolio</title>
     <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         @font-face {
             font-family: 'Clear Sans';
             src: url('fonts/ClearSans-Regular.woff2') format('woff2'),
@@ -436,6 +453,235 @@
         .contact p img:hover {
             transform: scale(1.1);
         }
+
+        /* ===================================== */
+        /* COMPLETE MOBILE RESPONSIVE DESIGN */
+        /* ===================================== */
+
+        @media (max-width: 768px) {
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+
+            body {
+                padding-top: 110px;
+            }
+
+            /* ================= NAVBAR ================= */
+
+            .logo_navigation {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            .logo {
+                width: 100%;
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+            .navigation {
+                width: 100%;
+                justify-content: center;
+                padding-right: 0;
+            }
+
+            .navigation ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+                font-size: 14px;
+                padding: 0 10px;
+            }
+
+            /* ================= HOME SECTION ================= */
+
+            .firstImg_firstText {
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .firstImg,
+            .firstText {
+                width: 100%;
+            }
+
+            .firstImg {
+                overflow: hidden;
+            }
+
+            .firstImg img {
+                width: 100%;
+                height: auto;
+                max-width: 90%;
+                display: block;
+            }
+
+            .firstText {
+                padding: 30px 15px;
+            }
+
+            .myName {
+                font-size: 26px;
+                white-space: normal;
+            }
+
+            .shortIntroText {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            .reachOutBtn,
+            .resume {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .reachBtn,
+            .resume a {
+                padding: 10px 30px;
+                font-size: 14px;
+                width: auto;
+                text-align: center;
+            }
+
+            /* ================= ABOUT SECTION ================= */
+
+            .aboutMe {
+                flex-direction: column;
+                padding: 70px 5%;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .aboutMeText,
+            .secondImg {
+                width: 100%;
+            }
+
+            .aboutMeText h1 {
+                font-size: 28px;
+            }
+
+            .secondImg img {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            /* ================= EDUCATION ================= */
+
+            .education {
+                flex-direction: column;
+                padding: 70px 5%;
+                gap: 40px;
+            }
+
+            .educationText {
+                width: 100%;
+                font-size: 28px;
+                text-align: center;
+                padding-top: 0;
+            }
+
+            .eduDescription {
+                width: 100%;
+                grid-template-columns: 1fr;
+                row-gap: 30px;
+            }
+
+            /* ================= SKILLS ================= */
+
+            .skills_Proficiencies {
+                padding: 70px 5%;
+                gap: 50px;
+            }
+
+            .titleText {
+                width: 100%;
+                font-size: 28px;
+                text-align: center;
+            }
+
+            .skillsDescription {
+                width: 100%;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .tecnicalSkills,
+            .Languages {
+                width: 100%;
+            }
+
+            /* ================= MY WORKS ================= */
+
+            .myWorks {
+                padding: 70px 5%;
+            }
+
+            .myWorkTitle {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .workBox {
+                gap: 30px;
+            }
+
+            .workDetails {
+                width: 100%;
+            }
+
+            .workImg {
+                height: 180px;
+            }
+
+            /* ================= CONTACT ================= */
+
+            .contactBox {
+                flex-direction: column;
+                padding: 70px 5%;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .thirdImg,
+            .contact {
+                width: 100%;
+            }
+
+            .thirdImg img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .contact h3 {
+                font-size: 26px;
+            }
+
+            .contact h5 {
+                font-size: 16px;
+            }
+
+            .contact p {
+                font-size: 14px;
+            }
+
+        }
     </style>
 </head>
 
@@ -464,13 +710,15 @@
                 Md. Naimul Islam Shehab
             </div>
             <div class="shortIntroText">
-                Undergraduate  CSE Student
+                Undergraduate CSE Student
             </div>
             <div class="reachOutBtn">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR2NjMS96MQnTkHxTKQj0TGG7y34s3VUv7lX4h7oSnsda65Q/viewform?usp=dialog" class="reachBtn">Reach Out</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR2NjMS96MQnTkHxTKQj0TGG7y34s3VUv7lX4h7oSnsda65Q/viewform?usp=dialog"
+                    class="reachBtn">Reach Out</a>
             </div>
             <div class="resume">
-                <a href="https://drive.google.com/file/d/1TDqgJK9t8fvs_bUoPHQb0HBjzNcYF-W_/view?usp=sharing">Download Resume</a>
+                <a href="https://drive.google.com/file/d/1TDqgJK9t8fvs_bUoPHQb0HBjzNcYF-W_/view?usp=sharing">Download
+                    Resume</a>
             </div>
         </div>
     </div>
@@ -478,11 +726,11 @@
         <div class="aboutMeText">
             <h1>About Me</h1>
             <p>
-                Enthusiastic and dedicated undergraduate student currently in the 7th semester with a strong academic record
+                Enthusiastic and dedicated undergraduate student currently in the 7th semester with a strong academic
                 background and foundational knowledge of software engineering concepts.<br> Actively learning
                 programming
                 and problem-solving skills, seeking a Software Engineering Internship to gain hands-on experience and
-                Grow as a developer.
+                grow as a developer.
             </p>
         </div>
         <div class="secondImg">
@@ -545,7 +793,7 @@
         <div class="skillsDescription">
             <div class="tecnicalSkills">
                 <div class="SkillsDetails">
-                    HTML, CSS, PHP, JavaScript, Python, MySQL
+                    HTML,CSS,PHP,JavaScript,Python,MySql
                 </div>
                 <div class="meter"></div>
                 <div class="SkillsDetails">
@@ -621,6 +869,5 @@
         </div>
     </div>
 </body>
-
 
 </html>
